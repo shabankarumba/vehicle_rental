@@ -12,10 +12,9 @@ class VehicleOwnerInsurance < ActiveRecord::Base
   end
 
   def total_days_charged_for
-    # total_days_covered - vehicle.driver_insurances.map{|driver_insurance| driver_insurance.numds}.sum
-    # Does not seem to work!!
-
-    4
+    total_days_covered - vehicle.driver_insurances.inject(0) do |total_days, driver_insurance|
+                           total_days += ((end_date + 1) - driver_insurance.start_date).to_f
+                         end
   end
 
   def total_charge_pounds
