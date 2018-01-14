@@ -11,13 +11,15 @@ class VehicleOwnerInsurance < ActiveRecord::Base
     (end_date - start_date).to_f + 1
   end
 
+  def total_charge_pounds
+    total_days_charged_for * vehicle.vehicle_owner_insurance_daily_rate_pounds
+  end
+
+  private
+
   def total_days_charged_for
     total_days_covered - vehicle.driver_insurances.inject(0) do |total_days, driver_insurance|
                            total_days += ((end_date + 1) - driver_insurance.start_date).to_f
                          end
-  end
-
-  def total_charge_pounds
-    total_days_charged_for * vehicle.vehicle_owner_insurance_daily_rate_pounds
   end
 end
