@@ -1,3 +1,7 @@
+# coding: utf-8
+
+# frozen_string_literal: true
+
 # Driver insurance is issued to drivers while they rent the vehicle.
 # The start date is when the vehicle is picked up and the end date is when the vehicle is dropped off.
 # The price of the vehicle is the number of days on cover (excluding the drop off date which is free) -

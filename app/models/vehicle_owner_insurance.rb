@@ -1,3 +1,7 @@
+# coding: utf-8
+
+# frozen_string_literal: true
+
 # Vehicle owner insurance is issued to vehicle owners, but they only pay for all days the vehicle is NOT on rent by drivers
 #                                                                          This is to cover periods the vehicle is waiting to be rented and sitting in the parking lot
 #                                                                          Vehicle insurance pricing includes the end date (unlike driver insurance)
